@@ -23,12 +23,30 @@
                     <p ng-show="iniciado">Curso em Andamento!</p>
                     <p ng-hide="iniciado">Curso Finalizado!</p>
                     <p ng-if="!iniciado">Aguarde o próximo curso!</p>
+                    <p>Preço do curso: {{valor | currency : 'R$ '}}</p>
                 </div>
             </div>
             <br><br>
-            <li ng-repeat="aluno in alunos">
-                {{aluno}}
-            </li>
+            <div>
+                <label>Definir Preço:</label>
+                <input type="number" id="valor" name="valor" ng-model="valor">
+            </div>
+            <br><br>
+            <h3>Alunos Cadastrados</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                            Nome
+                        </th>
+                    </tr>
+                    <tr ng-repeat="aluno in alunos">
+                        <td>
+                            {{aluno}}
+                        </td>
+                    </tr>
+                </table>
+            </div>
             <br>
             <button ng-show="iniciado" ng-click="finalizar()" class="btn btn-danger">
                 Finalizar
@@ -36,10 +54,30 @@
             <button ng-hide="iniciado" ng-click="iniciar()" class="btn btn-success">
                 Iniciar
             </button>
+            <br><br>
+            <h3>Nova Inscrição no Curso</h3>
+            <form name="form_1">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-group-default">
+                            <label>Nome</label>
+                            <input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno" ng-readonly="!iniciado" ng-minlength="3">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button ng-click="submeter()" class="btn btn-primary" ng-disabled="!iniciado ">
+                            Adicionar
+                        </button>
+                    </div>
+                </div>
+            </form>
             <!-- <div ng-show="iniciado" ng-click="finalizar()">
                 Finalizar em forma de div
             </div> -->
         </div>
+        <br><br>
         <div class="container-fluid container-fixed-lg footer">
             <div class="copyright sm-text-center">
                 <p class="small no-margin pull-left sm-pull-reset">
