@@ -17,6 +17,16 @@ Referência ao enunciado/origem do exercício: https://cursos.timtec.com.br/cour
 				Bem Vindo ao Curso de Desenvolvimento WEB com Angular JS
 			</h1>
 		</div>
+		<nav class="navbar navbar-default" ng-controller="MenuController">
+			<div class="collapse navbar-collapse" id="menu">
+				<ul class="nav navbar-nav">
+					<li><a ng-click="irInicio()">Início</a></li>
+					<li><a ng-click="irListagem()">Alunos</a></li>
+					<li><a ng-click="irCadastro()">Cadastro</a></li>
+					<li><a ng-click="irPrevisao()">Previsão do Tempo</a></li>
+				</ul>
+			</div>
+		</nav>
 		<div ui-view></div>
 		<div class="container-fluid container-fixed-lg footer">
 			<div class="copyright sm-text-center">
