@@ -10,18 +10,22 @@ var app = angular.module('aplicacao', ['ngResource', 'ui.router'])
             .state('aplicacao_inicial', {
                 name: 'aplicacao_inicial',
                 url: '/inicial.html',
-                templateURL: 'views/inicial.html'
+                templateUrl: 'views/inicial.html'
             }).state('aplicacao_listagem', {
                 name: 'aplicacao_listagem',
                 url: '/listagem.html',
-                templateURL: 'views/listagem-alunos.html'
+                templateUrl: 'views/listagem-alunos.html'
             }).state('aplicacao_cadastro', {
                 name: 'aplicacao_cadastro',
                 url: '/cadastro.html',
-                templateURL: 'views/cadastro-alunos.html'
+                templateUrl: 'views/cadastro-alunos.html'
             }).state('aplicacao_previsao', {
                 name: 'aplicacao_previsao',
                 url: '/previsao.html',
-                templateURL: 'views/previsao-do-tempo.html'
+                templateUrl: 'views/previsao-do-tempo.html'
             });
     });
+
+app.run(function($rootScope, $state) {
+    $state.go("aplicacao_inicial");
+});
