@@ -1,3 +1,9 @@
+/*
+Nome do autor: Elian Melo Morais
+Data de criação do arquivo: 15/03/2019
+Objetivo sucinto do programa: Controller geral que realiza diversas funções
+Referência ao enunciado/origem do exercício: https://cursos.timtec.com.br/course/desenvolvimento-web-com-angularjs/intro
+*/
 angular.module('aplicacao').controller('PrimeiroController', function($scope, $filter){
 	$scope.nome = 'Elian Melo';
 

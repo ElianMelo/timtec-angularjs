@@ -1,3 +1,9 @@
+/*
+Nome do autor: Elian Melo Morais
+Data de criação do arquivo: 20/03/2019
+Objetivo sucinto do programa: Service que manipula os dados de alunos
+Referência ao enunciado/origem do exercício: https://cursos.timtec.com.br/course/desenvolvimento-web-com-angularjs/intro
+*/
  angular.module('aplicacao').service('AlunosCollectionService', function ($filter) {
 
      var ordenadoPorNome = false;
