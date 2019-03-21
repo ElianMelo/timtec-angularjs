@@ -8,6 +8,7 @@ angular.module('aplicacao').controller('ListagemAlunosController', function($sco
 	$scope.nome = 'Elian Melo';
 
 	$scope.iniciado = true;
+	$scope.cadastrar = false;
 
     $scope.hoje = new Date();
 
@@ -30,5 +31,9 @@ angular.module('aplicacao').controller('ListagemAlunosController', function($sco
 		AlunosCollectionService.ordenarPorIdade();
 		$scope.alunos = AlunosCollectionService.getAlunos();
     }
+
+	$scope.exibeCadastro = function() {
+		$scope.cadastrar = !$scope.cadastrar;
+	}
 
 });
