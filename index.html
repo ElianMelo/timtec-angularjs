@@ -17,7 +17,7 @@ Referência ao enunciado/origem do exercício: https://cursos.timtec.com.br/cour
 				Bem Vindo ao Curso de Desenvolvimento WEB com Angular JS
 			</h1>
 		</div>
-		<div ng-controller="PrimeiroController" class="well">
+		<div ng-controller="ListagemAlunosController" class="well">
 			<h3>Olá, {{nome}} seja bem vindo!</h3>
 			<div ng-class="{'panel panel-primary':iniciado, 'panel panel-danger':!iniciado}">
 				<div class="panel-heading">
@@ -66,13 +66,18 @@ Referência ao enunciado/origem do exercício: https://cursos.timtec.com.br/cour
 			<button ng-hide="iniciado" ng-click="iniciar()" class="btn btn-success">
 				Iniciar
 			</button>
-            <h3>Nova Inscrição no Curso</h3>
+            <!-- <div ng-show="iniciado" ng-click="finalizar()">
+                Finalizar em forma de div
+            </div> -->
+		</div>
+		<div class="well" ng-controller="NovaInscricaoController">
+			<h3>Nova Inscrição no Curso</h3>
             <form name="form_1">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group form-group-default">
                             <label>Nome</label>
-                            <input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno" ng-readonly="!iniciado" ng-minlength="3">
+                            <input class="form-control" type="text" id="nome_aluno" name="nome_aluno" ng-model="nome_aluno">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -84,17 +89,12 @@ Referência ao enunciado/origem do exercício: https://cursos.timtec.com.br/cour
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <button ng-click="submeter()" class="btn btn-primary" ng-disabled="!iniciado ">
+                        <button ng-click="submeter()" class="btn btn-primary">
                             Adicionar
                         </button>
                     </div>
                 </div>
             </form>
-            <!-- <div ng-show="iniciado" ng-click="finalizar()">
-                Finalizar em forma de div
-            </div> -->
-		</div>
-		<div class="well" ng-controller="">
 		</div>
         <div class="well" ng-controller="PrevisaoTempoController">
             <h3>Demonstrando o ng-resource</h3>
@@ -114,7 +114,7 @@ Referência ao enunciado/origem do exercício: https://cursos.timtec.com.br/cour
 		<script src="scripts/libs/angular.js"></script>
         <script src="scripts/libs/ngResource.js"></script>
 		<script src="scripts/app.js"></script>
-		<script src="scripts/primeiro-controller.js"></script>
+		<script src="scripts/listagem-alunos-controller.js"></script>
 		<script src="scripts/nova-inscricao-controller.js"></script>
         <script src="scripts/previsao-tempo-controller.js"></script>
 		<script src="scripts/alunos-collection-service.js"></script>
